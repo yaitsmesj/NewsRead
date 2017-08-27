@@ -4,11 +4,11 @@
     <item
         android:id="@+id/newspapers"
         android:icon="@drawable/ic_open_in_new_white_18dp"
-        android:title="Newspapers"
-        app:showAsAction="always"/>
+        android:title="@string/newspapers"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/about"
         android:icon="@drawable/ic_verified_user_white_18dp"
-        android:title="About"
-        app:showAsAction="never"/>
+        android:title="@string/about"
+        app:showAsAction="never" />
 </menu>

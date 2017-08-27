@@ -17,7 +17,8 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
     private int fragCount = 0;
     List<Fragment> fragList;
-    public MyFragmentPagerAdapter(FragmentManager fm,int count) {
+
+    public MyFragmentPagerAdapter(FragmentManager fm, int count) {
         super(fm);
         fragCount = count;
         this.fragList = new ArrayList<>(count);
@@ -28,19 +29,19 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
         Fragment fragment;
 
-        try{
+        try {
             fragment = fragList.get(position);
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
 
             fragment = createFragment(position);
-            fragList.add(position,fragment);
+            fragList.add(position, fragment);
         }
 
-        if(fragment==null) {
+        if (fragment == null) {
             fragment = createFragment(position);
             fragList.set(position, fragment);
         }
-            return fragment;
+        return fragment;
     }
 
     @Override
@@ -48,23 +49,19 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
         return fragCount;
     }
 
-    private Fragment createFragment(int position){
+    private Fragment createFragment(int position) {
 
         Fragment fragment;
-        if(position==Utils.BUSINESS_POSITION){
-            fragment = NewsFragment.getInstance(Utils.BUSINESS,"");
-        }else
-        if(position==Utils.SPORTS_POSITION){
-            fragment = NewsFragment.getInstance(Utils.SPORTS,"");
-        }else
-        if(position==Utils.ENTERTAINMENT_POSITION){
-            fragment = NewsFragment.getInstance(Utils.ENTERTAINMENT,"");
-        }else
-        if(position==Utils.TECHNOLOGY_POSITION){
-            fragment = NewsFragment.getInstance(Utils.TECHNOLOGY,"");
-        }else
-        {
-            fragment = NewsFragment.getInstance(Utils.TOP_NEWS,"");
+        if (position == Utils.BUSINESS_POSITION) {
+            fragment = NewsFragment.getInstance(Utils.BUSINESS, "");
+        } else if (position == Utils.SPORTS_POSITION) {
+            fragment = NewsFragment.getInstance(Utils.SPORTS, "");
+        } else if (position == Utils.ENTERTAINMENT_POSITION) {
+            fragment = NewsFragment.getInstance(Utils.ENTERTAINMENT, "");
+        } else if (position == Utils.TECHNOLOGY_POSITION) {
+            fragment = NewsFragment.getInstance(Utils.TECHNOLOGY, "");
+        } else {
+            fragment = NewsFragment.getInstance(Utils.TOP_NEWS, "");
         }
         return fragment;
     }

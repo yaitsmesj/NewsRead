@@ -12,16 +12,9 @@ import android.view.ViewGroup;
 
 import com.example.suraj.newsread.FetchingNews;
 import com.example.suraj.newsread.R;
-import com.example.suraj.newsread.apis.ArticlesApi;
-import com.example.suraj.newsread.apis.RestApi;
 import com.example.suraj.newsread.models.Articles;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class NewsFragment extends Fragment {
 
@@ -38,11 +31,11 @@ public class NewsFragment extends Fragment {
     }
 
 
-    public static NewsFragment getInstance(int category,String source){
+    public static NewsFragment getInstance(int category, String source) {
         NewsFragment fragment = new NewsFragment();
         Bundle args = new Bundle();
-        args.putInt("CATEGORY",category);
-        args.putString("SOURCE",source);
+        args.putInt("CATEGORY", category);
+        args.putString("SOURCE", source);
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,17 +44,17 @@ public class NewsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(getArguments()!=null){
+        if (getArguments() != null) {
             category = getArguments().getInt("CATEGORY");
             source = getArguments().getString("SOURCE");
         }
 
 
-        myNewsRecyclerViewAdapter = new MyNewsRecyclerViewAdapter(getContext(),articles, mListener);
+        myNewsRecyclerViewAdapter = new MyNewsRecyclerViewAdapter(getContext(), articles, mListener);
         Log.d(TAG, "onCreate: 2");
         FetchingNews fetchingNews = new FetchingNews();
-        fetchingNews.fetchNews(myNewsRecyclerViewAdapter,category,source);
-        Log.d(TAG, "onCreate:3 "+articles);
+        fetchingNews.fetchNews(myNewsRecyclerViewAdapter, category, source);
+        Log.d(TAG, "onCreate:3 " + articles);
 
     }
 

@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.suraj.newsread.models.Sources;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -23,11 +22,11 @@ public class SourcesAdapter extends RecyclerView.Adapter<SourcesAdapter.SourcesV
     ArrayList<Sources.SourceData> sourcesList;
     SourceSelectListener sourceSelectListener;
 
-    interface SourceSelectListener{
+    interface SourceSelectListener {
         void onSourceSelected(Sources.SourceData sourceItem);
     }
 
-    public void setOnSourceSelectedListener(SourceSelectListener sourceSelectedListener){
+    public void setOnSourceSelectedListener(SourceSelectListener sourceSelectedListener) {
         this.sourceSelectListener = sourceSelectedListener;
     }
 
@@ -36,7 +35,7 @@ public class SourcesAdapter extends RecyclerView.Adapter<SourcesAdapter.SourcesV
         this.sourcesList = sourcesList;
     }
 
-    public void updateList(ArrayList<Sources.SourceData> sourcesList){
+    public void updateList(ArrayList<Sources.SourceData> sourcesList) {
         this.sourcesList = sourcesList;
         notifyDataSetChanged();
     }
@@ -44,7 +43,7 @@ public class SourcesAdapter extends RecyclerView.Adapter<SourcesAdapter.SourcesV
     @Override
     public SourcesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater li = LayoutInflater.from(parent.getContext());
-        View view = li.inflate(R.layout.activity_source_list_item,parent,false);
+        View view = li.inflate(R.layout.activity_source_list_item, parent, false);
         return new SourcesViewHolder(view);
     }
 
@@ -71,7 +70,7 @@ public class SourcesAdapter extends RecyclerView.Adapter<SourcesAdapter.SourcesV
         return sourcesList.size();
     }
 
-    class SourcesViewHolder extends RecyclerView.ViewHolder{
+    class SourcesViewHolder extends RecyclerView.ViewHolder {
 
 
         public final View rootView;
@@ -82,9 +81,9 @@ public class SourcesAdapter extends RecyclerView.Adapter<SourcesAdapter.SourcesV
         public SourcesViewHolder(View itemView) {
             super(itemView);
             rootView = itemView;
-            sourceName = (TextView) itemView.findViewById(R.id.tv_SourceName);
-            sourceCategory = (TextView) itemView.findViewById(R.id.tv_Category);
-            sourceLogo = (ImageView) itemView.findViewById(R.id.iv_source);
+            sourceName = itemView.findViewById(R.id.tv_SourceName);
+            sourceCategory = itemView.findViewById(R.id.tv_Category);
+            sourceLogo = itemView.findViewById(R.id.iv_source);
 
         }
 

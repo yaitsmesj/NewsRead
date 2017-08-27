@@ -3,49 +3,55 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/lv_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:padding="3dp"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:orientation="horizontal"
+    android:padding="3dp">
 
     <ImageView
         android:id="@+id/iv"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_weight="2"
+        android:contentDescription="@string/news_image"
         android:scaleType="centerCrop"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="5">
+        android:layout_weight="5"
+        android:orientation="vertical">
+
         <TextView
             android:id="@+id/tv_title"
-            android:textSize="18sp"
-            android:maxLines="2"
-            android:text="@string/title"
-            android:textStyle="bold"
-            android:padding="3dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:padding="3dp"
+            android:text="@string/title"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/tv_desc"
-            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:maxLines="3"
             android:padding="2dp"
             android:text="@string/description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textSize="14sp" />
+
         <TextView
             android:id="@+id/tv_time"
-            android:textSize="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:padding="2dp"
             android:text="@string/time"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textSize="12sp" />
 
     </LinearLayout>
 </LinearLayout>

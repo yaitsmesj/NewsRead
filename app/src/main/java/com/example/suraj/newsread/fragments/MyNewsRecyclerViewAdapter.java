@@ -21,13 +21,13 @@ public class MyNewsRecyclerViewAdapter extends RecyclerView.Adapter<MyNewsRecycl
     private final NewsFragment.OnListFragmentInteractionListener mListener;
     Context context;
 
-    public MyNewsRecyclerViewAdapter(Context context,List<Articles.BaseNews> items, NewsFragment.OnListFragmentInteractionListener listener) {
+    public MyNewsRecyclerViewAdapter(Context context, List<Articles.BaseNews> items, NewsFragment.OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
         this.context = context;
     }
 
-    public void updateList(ArrayList<Articles.BaseNews> updatedList){
+    public void updateList(ArrayList<Articles.BaseNews> updatedList) {
         this.mValues = updatedList;
         notifyDataSetChanged();
     }
@@ -76,10 +76,10 @@ public class MyNewsRecyclerViewAdapter extends RecyclerView.Adapter<MyNewsRecycl
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            tv_Title = (TextView) view.findViewById(R.id.tv_title);
-            tv_Description = (TextView) view.findViewById(R.id.tv_desc);
-            tv_Time = (TextView) view.findViewById(R.id.tv_time);
-            iv_image = (ImageView) view.findViewById(R.id.iv);
+            tv_Title = view.findViewById(R.id.tv_title);
+            tv_Description = view.findViewById(R.id.tv_desc);
+            tv_Time = view.findViewById(R.id.tv_time);
+            iv_image = view.findViewById(R.id.iv);
         }
     }
 

@@ -8,9 +8,9 @@ data class Articles(
         var source: String,
         var sortBy: String,
         var articles: Array<BaseNews>
-){
+) {
 
-    data class BaseNews (
+    data class BaseNews(
             var author: String,
             var title: String,
             var description: String,

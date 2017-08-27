@@ -11,7 +11,6 @@ public class RestApi {
     private ArticlesApi articlesApi;
     private static RestApi restApi;
     private SourcesApi sourcesApi;
-    private Retrofit retrofit;
 
     public ArticlesApi getArticlesApi() {
         return articlesApi;
@@ -22,7 +21,7 @@ public class RestApi {
     }
 
     private RestApi() {
-        retrofit = new Retrofit.Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://newsapi.org")
                 .addConverterFactory(
                         GsonConverterFactory.create()
@@ -32,8 +31,8 @@ public class RestApi {
         sourcesApi = retrofit.create(SourcesApi.class);
     }
 
-    public static RestApi getInstance(){
-        if(restApi==null){
+    public static RestApi getInstance() {
+        if (restApi == null) {
             restApi = new RestApi();
         }
         return restApi;

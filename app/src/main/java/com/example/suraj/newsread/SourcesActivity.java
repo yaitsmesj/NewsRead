@@ -1,8 +1,8 @@
 package com.example.suraj.newsread;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -19,7 +19,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SourcesActivity extends AppCompatActivity
-                                implements SourcesAdapter.SourceSelectListener{
+        implements SourcesAdapter.SourceSelectListener {
 
     public static final String TAG = "Error";
 
@@ -29,17 +29,17 @@ public class SourcesActivity extends AppCompatActivity
         setContentView(R.layout.activity_sources);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_Sources);
-        final SourcesAdapter sourcesAdapter = new SourcesAdapter(this,new ArrayList<Sources.SourceData>());
+        final SourcesAdapter sourcesAdapter = new SourcesAdapter(this, new ArrayList<Sources.SourceData>());
 
-        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView.setAdapter(sourcesAdapter);
 
         SourcesApi sourcesApi = RestApi.getInstance().getSourcesApi();
         sourcesApi.getSources("en").enqueue(new Callback<Sources>() {
             @Override
             public void onResponse(Call<Sources> call, Response<Sources> response) {
-                Log.d(TAG, "onResponse: "+response.body());
-                 sourcesAdapter.updateList(new ArrayList<>(Arrays.asList(response.body().getSources())));
+                Log.d(TAG, "onResponse: " + response.body());
+                sourcesAdapter.updateList(new ArrayList<>(Arrays.asList(response.body().getSources())));
             }
 
             @Override
@@ -54,8 +54,8 @@ public class SourcesActivity extends AppCompatActivity
     @Override
     public void onSourceSelected(Sources.SourceData sourceItem) {
 
-        Intent intent = new Intent(this,SourceNewsActivity.class);
-        intent.putExtra("SOURCE",sourceItem.getId());
+        Intent intent = new Intent(this, SourceNewsActivity.class);
+        intent.putExtra("SOURCE", sourceItem.getId());
         startActivity(intent);
 
     }
