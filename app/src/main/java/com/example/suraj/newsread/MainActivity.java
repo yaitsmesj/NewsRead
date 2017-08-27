@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
-        viewPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), 5));
+        viewPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager()));
         viewPager.setOffscreenPageLimit(2);
         Log.d(TAG, "onCreate:1 ");
 

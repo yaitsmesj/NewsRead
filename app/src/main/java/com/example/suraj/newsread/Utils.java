@@ -4,7 +4,7 @@ package com.example.suraj.newsread;
  * Created by Suraj on 09-Aug-17.
  */
 
-public class Utils {
+class Utils {
 
     public static final int TOP_NEWS = 01;
     public static final int BUSINESS = 02;

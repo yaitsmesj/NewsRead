@@ -21,7 +21,7 @@ import retrofit2.Response;
 public class SourcesActivity extends AppCompatActivity
         implements SourcesAdapter.SourceSelectListener {
 
-    public static final String TAG = "Error";
+    private static final String TAG = "Error";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class SourcesActivity extends AppCompatActivity
         recyclerView.setAdapter(sourcesAdapter);
 
         SourcesApi sourcesApi = RestApi.getInstance().getSourcesApi();
-        sourcesApi.getSources("en").enqueue(new Callback<Sources>() {
+        sourcesApi.getSources().enqueue(new Callback<Sources>() {
             @Override
             public void onResponse(Call<Sources> call, Response<Sources> response) {
                 Log.d(TAG, "onResponse: " + response.body());

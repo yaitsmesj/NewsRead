@@ -13,15 +13,15 @@ import java.util.List;
  * Created by Suraj on 09-Aug-17.
  */
 
-public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
+class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
     private int fragCount = 0;
-    List<Fragment> fragList;
+    private List<Fragment> fragList;
 
-    public MyFragmentPagerAdapter(FragmentManager fm, int count) {
+    public MyFragmentPagerAdapter(FragmentManager fm) {
         super(fm);
-        fragCount = count;
-        this.fragList = new ArrayList<>(count);
+        fragCount = 5;
+        this.fragList = new ArrayList<>(5);
     }
 
     @Override

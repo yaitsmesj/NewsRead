@@ -18,14 +18,14 @@ import java.util.ArrayList;
 
 public class NewsFragment extends Fragment {
 
-    public static final String TAG = "Error";
+    private static final String TAG = "Error";
 
     private int category = 0;
     private String source = "";
     private OnListFragmentInteractionListener mListener;
 
-    ArrayList<Articles.BaseNews> articles = new ArrayList<>();
-    MyNewsRecyclerViewAdapter myNewsRecyclerViewAdapter;
+    private ArrayList<Articles.BaseNews> articles = new ArrayList<>();
+    private MyNewsRecyclerViewAdapter myNewsRecyclerViewAdapter;
 
     public NewsFragment() {
     }

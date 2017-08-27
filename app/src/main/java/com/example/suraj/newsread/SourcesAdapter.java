@@ -18,9 +18,9 @@ import java.util.ArrayList;
 
 public class SourcesAdapter extends RecyclerView.Adapter<SourcesAdapter.SourcesViewHolder> {
 
-    Context context;
-    ArrayList<Sources.SourceData> sourcesList;
-    SourceSelectListener sourceSelectListener;
+    private Context context;
+    private ArrayList<Sources.SourceData> sourcesList;
+    private SourceSelectListener sourceSelectListener;
 
     interface SourceSelectListener {
         void onSourceSelected(Sources.SourceData sourceItem);

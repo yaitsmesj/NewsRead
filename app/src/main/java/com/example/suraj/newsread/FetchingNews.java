@@ -23,9 +23,9 @@ import static com.example.suraj.newsread.MainActivity.TAG;
 public class FetchingNews {
 
     @SuppressWarnings("unchecked")
-    final ArrayList<Articles.BaseNews>[] data = new ArrayList[1];
-    ArticlesApi articlesApi = RestApi.getInstance().getArticlesApi();
-    ArrayList<String> sources = new ArrayList<>();
+    private final ArrayList<Articles.BaseNews>[] data = new ArrayList[1];
+    private ArticlesApi articlesApi = RestApi.getInstance().getArticlesApi();
+    private ArrayList<String> sources = new ArrayList<>();
 
     public void fetchNews(final MyNewsRecyclerViewAdapter myNewsRecyclerViewAdapter, int category, String source) {
 

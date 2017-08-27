@@ -10,7 +10,7 @@ import com.example.suraj.newsread.models.Articles;
 
 public class SourceNewsActivity extends AppCompatActivity implements NewsFragment.OnListFragmentInteractionListener {
 
-    public static final String TAG = "Error";
+    private static final String TAG = "Error";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

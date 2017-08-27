@@ -19,7 +19,7 @@ public class MyNewsRecyclerViewAdapter extends RecyclerView.Adapter<MyNewsRecycl
 
     private List<Articles.BaseNews> mValues;
     private final NewsFragment.OnListFragmentInteractionListener mListener;
-    Context context;
+    private Context context;
 
     public MyNewsRecyclerViewAdapter(Context context, List<Articles.BaseNews> items, NewsFragment.OnListFragmentInteractionListener listener) {
         mValues = items;
