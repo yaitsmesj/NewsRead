@@ -1,8 +1,6 @@
 package com.example.suraj.newsread.models
 
-/**
- * Created by Suraj on 09-Aug-17.
- */
+
 data class Articles(
         var status: String,
         var source: String,

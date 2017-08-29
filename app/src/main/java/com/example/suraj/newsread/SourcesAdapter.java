@@ -12,13 +12,10 @@ import com.example.suraj.newsread.models.Sources;
 
 import java.util.ArrayList;
 
-/**
- * Created by Suraj on 19-Aug-17.
- */
 
 public class SourcesAdapter extends RecyclerView.Adapter<SourcesAdapter.SourcesViewHolder> {
 
-    private Context context;
+    private final Context context;
     private ArrayList<Sources.SourceData> sourcesList;
     private SourceSelectListener sourceSelectListener;
 

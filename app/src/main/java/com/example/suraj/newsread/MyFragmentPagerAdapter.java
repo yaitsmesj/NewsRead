@@ -9,14 +9,11 @@ import com.example.suraj.newsread.fragments.NewsFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Suraj on 09-Aug-17.
- */
 
 class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
     private int fragCount = 0;
-    private List<Fragment> fragList;
+    private final List<Fragment> fragList;
 
     public MyFragmentPagerAdapter(FragmentManager fm) {
         super(fm);

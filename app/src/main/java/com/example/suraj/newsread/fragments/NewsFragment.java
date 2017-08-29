@@ -24,7 +24,7 @@ public class NewsFragment extends Fragment {
     private String source = "";
     private OnListFragmentInteractionListener mListener;
 
-    private ArrayList<Articles.BaseNews> articles = new ArrayList<>();
+    private final ArrayList<Articles.BaseNews> articles = new ArrayList<>();
     private MyNewsRecyclerViewAdapter myNewsRecyclerViewAdapter;
 
     public NewsFragment() {

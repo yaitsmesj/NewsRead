@@ -1,5 +1,6 @@
 package com.example.suraj.newsread;
 
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.example.suraj.newsread.apis.ArticlesApi;
@@ -16,16 +17,13 @@ import retrofit2.Response;
 
 import static com.example.suraj.newsread.MainActivity.TAG;
 
-/**
- * Created by Suraj on 09-Aug-17.
- */
 
 public class FetchingNews {
 
     @SuppressWarnings("unchecked")
     private final ArrayList<Articles.BaseNews>[] data = new ArrayList[1];
-    private ArticlesApi articlesApi = RestApi.getInstance().getArticlesApi();
-    private ArrayList<String> sources = new ArrayList<>();
+    private final ArticlesApi articlesApi = RestApi.getInstance().getArticlesApi();
+    private final ArrayList<String> sources = new ArrayList<>();
 
     public void fetchNews(final MyNewsRecyclerViewAdapter myNewsRecyclerViewAdapter, int category, String source) {
 
@@ -53,16 +51,16 @@ public class FetchingNews {
         data[0] = new ArrayList<>();
         for (int i = 0; i < sources.size(); i++) {
 
-            articlesApi.getNews(sources.get(i), "top", "c2ec927124e043a5abc4b49dc6f4aaef").enqueue(new Callback<Articles>() {
+            articlesApi.getNews(sources.get(i)).enqueue(new Callback<Articles>() {
                 @Override
-                public void onResponse(Call<Articles> call, Response<Articles> response) {
+                public void onResponse(@NonNull Call<Articles> call, @NonNull Response<Articles> response) {
                     data[0].addAll(new ArrayList<>(Arrays.asList(response.body().getArticles())));
                     Log.d(TAG, "onResponse: " + data[0]);
                     myNewsRecyclerViewAdapter.updateList(data[0]);
                 }
 
                 @Override
-                public void onFailure(Call<Articles> call, Throwable t) {
+                public void onFailure(@NonNull Call<Articles> call, @NonNull Throwable t) {
                     Log.d(TAG, "onFailure: ");
                 }
             });

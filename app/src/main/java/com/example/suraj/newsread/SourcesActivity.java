@@ -2,6 +2,7 @@ package com.example.suraj.newsread;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -37,13 +38,13 @@ public class SourcesActivity extends AppCompatActivity
         SourcesApi sourcesApi = RestApi.getInstance().getSourcesApi();
         sourcesApi.getSources().enqueue(new Callback<Sources>() {
             @Override
-            public void onResponse(Call<Sources> call, Response<Sources> response) {
+            public void onResponse(@NonNull Call<Sources> call, @NonNull Response<Sources> response) {
                 Log.d(TAG, "onResponse: " + response.body());
                 sourcesAdapter.updateList(new ArrayList<>(Arrays.asList(response.body().getSources())));
             }
 
             @Override
-            public void onFailure(Call<Sources> call, Throwable t) {
+            public void onFailure(@NonNull Call<Sources> call, @NonNull Throwable t) {
                 Log.d(TAG, "onFailure: ");
             }
         });

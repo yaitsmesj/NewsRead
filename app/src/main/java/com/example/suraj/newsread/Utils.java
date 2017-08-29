@@ -1,9 +1,5 @@
 package com.example.suraj.newsread;
 
-/**
- * Created by Suraj on 09-Aug-17.
- */
-
 class Utils {
 
     public static final int TOP_NEWS = 01;
@@ -14,9 +10,9 @@ class Utils {
 
 
     public static int TOP_NEWS_POSITION = 0;
-    public static int BUSINESS_POSITION = 1;
-    public static int SPORTS_POSITION = 2;
-    public static int ENTERTAINMENT_POSITION = 3;
-    public static int TECHNOLOGY_POSITION = 4;
+    public static final int BUSINESS_POSITION = 1;
+    public static final int SPORTS_POSITION = 2;
+    public static final int ENTERTAINMENT_POSITION = 3;
+    public static final int TECHNOLOGY_POSITION = 4;
 
 }

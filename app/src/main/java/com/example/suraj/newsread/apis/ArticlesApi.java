@@ -6,15 +6,11 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-/**
- * Created by Suraj on 09-Aug-17.
- */
+
 
 public interface ArticlesApi {
     @GET("/v1/articles")
     Call<Articles> getNews(
-            @Query("source") String source,
-            @Query("sortBy") String sort,
-            @Query("apiKey") String key
+            @Query("source") String source
     );
 }

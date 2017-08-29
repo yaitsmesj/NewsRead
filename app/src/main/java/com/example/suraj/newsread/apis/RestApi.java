@@ -3,14 +3,11 @@ package com.example.suraj.newsread.apis;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by Suraj on 09-Aug-17.
- */
 public class RestApi {
 
-    private ArticlesApi articlesApi;
+    private final ArticlesApi articlesApi;
     private static RestApi restApi;
-    private SourcesApi sourcesApi;
+    private final SourcesApi sourcesApi;
 
     public ArticlesApi getArticlesApi() {
         return articlesApi;

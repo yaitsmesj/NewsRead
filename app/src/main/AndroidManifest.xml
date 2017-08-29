@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SourcesActivity" />
-        <activity android:name=".SourceNewsActivity"></activity>
+        <activity android:name=".SourceNewsActivity" />
     </application>
 
 </manifest>
