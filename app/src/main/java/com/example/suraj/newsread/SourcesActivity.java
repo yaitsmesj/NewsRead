@@ -55,6 +55,7 @@ public class SourcesActivity extends AppCompatActivity
     @Override
     public void onSourceSelected(Sources.SourceData sourceItem) {
 
+        Log.d(TAG, "onSourceSelected: ");
         Intent intent = new Intent(this, SourceNewsActivity.class);
         intent.putExtra("SOURCE", sourceItem.getId());
         startActivity(intent);

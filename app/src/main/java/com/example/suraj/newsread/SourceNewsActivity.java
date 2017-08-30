@@ -20,7 +20,10 @@ public class SourceNewsActivity extends AppCompatActivity implements NewsFragmen
         String source = getIntent().getStringExtra("SOURCE");
         Log.d(TAG, "onCreate: SourceNewsAcitvity");
         Fragment fragment = NewsFragment.getInstance(0, source);
-        getSupportFragmentManager().beginTransaction().add(R.id.fragment_Container, fragment).commit();
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragment_Container, fragment)
+                .commit();
+        Log.d(TAG, "onCreate: ");
 
     }
 

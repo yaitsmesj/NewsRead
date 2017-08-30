@@ -51,7 +51,7 @@ public class FetchingNews {
         data[0] = new ArrayList<>();
         for (int i = 0; i < sources.size(); i++) {
 
-            articlesApi.getNews(sources.get(i)).enqueue(new Callback<Articles>() {
+            articlesApi.getNews(sources.get(i), "top", "c2ec927124e043a5abc4b49dc6f4aaef").enqueue(new Callback<Articles>() {
                 @Override
                 public void onResponse(@NonNull Call<Articles> call, @NonNull Response<Articles> response) {
                     data[0].addAll(new ArrayList<>(Arrays.asList(response.body().getArticles())));
